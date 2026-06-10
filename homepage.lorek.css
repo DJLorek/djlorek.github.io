@@ -151,7 +151,7 @@ h3 {
   to { transform: rotate(360deg) translateX(var(--distanza)) rotate(-360deg); }
 }
 
-/* Differenziamo i tempi per evitare l'effetto "sincronizzato" */
+
 .b1 { --w: 100px; width: var(--w); top: 15%; left: 20%; animation-duration: 12s, 3.5s; }
 .b2 { --w: 150px; width: var(--w); top: 40%; left: 60%; animation-duration: 18s, 5.2s; }
 .b3 { --w: 80px; width: var(--w); top: 70%; left: 30%; animation-duration: 14s, 4.3s; }
