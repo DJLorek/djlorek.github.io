@@ -10,6 +10,7 @@
 
 
 <body>
+    <div class="page-transition-overlay" id="transitionOverlay"></div>
     <div class="bg">
         <div class="blob b1"> <img src="./media/light.png"></div>
         <div class="blob b2"> <img src="./media/light.png"></div>
@@ -67,27 +68,47 @@
 
 <script>
 
-    const imgProfile = document.getElementById('link-djlorek');
-    if (imgProfile) {
-        imgProfile.onclick = function() {
-            window.open('https://linktr.ee/djlorek', '_blank');
-        };
+const overlay = document.getElementById('transitionOverlay');
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    const savedScroll = sessionStorage.getItem('scrollPos');
+    if (savedScroll !== null) {
+        window.scrollTo(0, parseInt(savedScroll, 10));
+        sessionStorage.removeItem('scrollPos');
     }
+    requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('reveal')));
+});
 
 
-    document.getElementById('load-about').onclick = function() {
-        window.location.href = 'index.html';
+function navigateTo(url) {
+    sessionStorage.setItem('scrollPos', window.scrollY);
+    overlay.classList.remove('reveal');
+    overlay.addEventListener('transitionend', function handler() {
+        overlay.removeEventListener('transitionend', handler);
+        window.location.href = url;
+    }, { once: true });
+}
+
+
+const imgProfile = document.getElementById('link-djlorek');
+if (imgProfile) {
+    imgProfile.onclick = function() {
+        window.open('https://linktr.ee/djlorek', '_blank');
     };
+}
 
+document.getElementById('load-about').onclick = function() {
+    navigateTo('index.html');
+};
 
-    document.getElementById('load-dj').onclick = function() {
-        window.location.href = 'homepage.lorek.dj.html';
-    };
+document.getElementById('load-dj').onclick = function() {
+    navigateTo('homepage.lorek.dj.html');
+};
 
-
-    document.getElementById('load-prod').onclick = function() {
-        window.location.href = 'homepage.lorek.production.html';
-    };
+document.getElementById('load-prod').onclick = function() {
+    navigateTo('homepage.lorek.production.html');
+};
 </script>
 
 </html>
