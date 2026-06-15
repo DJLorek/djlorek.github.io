@@ -194,10 +194,10 @@ h3 {
     position: absolute;
     font-size: 5vh;
     top: 0;
-    left: 0;
+    left: 2vw;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
     padding-top: 20px;
     margin: 0;
@@ -226,27 +226,75 @@ h5{
 .Spotify{
   position: absolute;
   top: 10%;
-  left: 30%;
+  left: 58%;
   width: 35vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
 }
 
 .nav_2 {
 
+  position: absolute;
+  top: 65vh;
+  left: 0;
+  width: 100%;
   font-size: 30px;
   font-family: Aventa;
   color: white;
-  display:flex;
-  justify-content: left;
-  align-items:left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   padding-left: 6vw;
-
 }
 
 .nav_2 .bar{
 
   font-family: Aventa;
 
+}
+
+
+
+
+.about_menu, .dj_menu, .prod_menu {
+    position: relative;
+    z-index: 1;
+}
+
+
+.about_menu::after, 
+.dj_menu::after, 
+.prod_menu::after {
+    content: "";
+    position: absolute;
+    top: -25%; left: -25%;
+    width: 150%; height: 150%;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    pointer-events: none;
+}
+
+
+.about_menu::after, 
+.dj_menu::after {
+    background-image: url('media/white_light.png');
+    background-size: contain;
+}
+
+
+.prod_menu::after {
+    background-image: url('media/white_light.png');
+
+    background-size: 100% 100%; 
+}
+
+
+.about_menu:hover::after, 
+.dj_menu:hover::after, 
+.prod_menu:hover::after {
+    opacity: 1;
 }
