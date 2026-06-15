@@ -67,7 +67,7 @@ body{
 .nav_bar .image{
     object-fit: cover;
     position: relative;
-    width: 4%;
+    width: 60px;
     height: auto;
     clip-path: circle(50% at center);
     transition: 0.6s ease;
