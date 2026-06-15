@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="homepage.lorek.css" type="text/css">
 </head>
 
+
+
+
 <body>
     <div class="bg">
         <div class="blob b1"> <img src="./media/light.png"></div>
@@ -16,7 +19,9 @@
     </div>
 
     <div class="nav_bar">
-        <img src="./media/djlorek.jpg" class="image">
+
+        <img src="./media/djlorek.jpg" class="image" id="link-djlorek">
+
         <h1>|</h1><h2>DJ LOREK</h2>
         
         <a href="mailto:officialdjlorek@gmail.com?subject=Gig%20Inquiry" class="button">Book Now!</a>
@@ -56,4 +61,11 @@
         <!--<iframe class="Spotify" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/41vOTUUkXoGMEcbLBKVEqq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
     </div>
 </body>
+
+<script>
+    document.getElementById('link-djlorek').addEventListener('click', function() {
+        window.open('https://linktr.ee/djlorek', '_blank');
+    });
+</script>
+
 </html>
