@@ -235,9 +235,6 @@ h5{
 
 .nav_2 {
 
-  position: absolute;
-  top: 65vh;
-  left: 0;
   width: 100%;
   font-size: 30px;
   font-family: Aventa;
@@ -246,6 +243,7 @@ h5{
   justify-content: flex-start;
   align-items: center;
   padding-left: 6vw;
+  flex-shrink: 0; 
 }
 
 .nav_2 .bar{
