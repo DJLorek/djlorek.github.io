@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: Quicksand;
-  src: url(./fonts/Quicksand-VariableFont_wght.ttf)
+  font-family: Aventa;
+  src: url(./fonts/Aventa-LightPERSONALUSEONLY.otf)
 }
 
 
@@ -184,7 +184,7 @@ h3 {
 }
 
 
-.interno_vetro {
+.music_production {
     position: absolute;
     font-size: 5vh;
     top: 0;
@@ -211,7 +211,7 @@ h4{
 
 h5{
   display: flex;
-  font-family: Okafuera;
+  font-family: Aventa;
   color: white;
   justify-content: center;
  
@@ -219,11 +219,28 @@ h5{
 
 .Spotify{
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 30%;
   width: 35vw;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nav_2 {
+
+  font-size: 30px;
+  font-family: Aventa;
+  color: white;
+  display:flex;
+  justify-content: left;
+  align-items:left;
+  padding-left: 6vw;
+
+}
+
+.nav_2 .bar{
+
+  font-family: Aventa;
+
 }
