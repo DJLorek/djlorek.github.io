@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: Aventa;
-  src: url(./fonts/Aventa.otf)
+  src: url(./fonts/Aventa-LightPERSONALUSEONLY.otf)
 }
 
 
@@ -320,4 +320,30 @@ h5{
   padding-bottom: 5vh;
 
 
+}
+
+.nav_2 h6 {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+
+.page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+.page-transition-overlay.reveal {
+    opacity: 0;
+}
+.nav_2 h6 {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
 }
