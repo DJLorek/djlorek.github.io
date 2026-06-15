@@ -34,8 +34,9 @@
 
     <div class="nav_2">
 
-        <h6 class="about_menu"> About&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp</h6> <h6 class="dj_menu">DJ&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp </h6> <h6 class="prod_menu"> Music Production</h6>
+        <h6 class="about_menu" id="load-about"> About&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp</h6> <h6 class="dj_menu" id="load-dj">DJ&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp </h6> <h6 class="prod_menu" id="load-prod"> Music Production</h6>
         <!--          Oh yeah,  good old shitcoding-->          <!--   And again-->                           <!--   And again-->             <!--   And again-->
+        
 
     </div>
 
@@ -65,9 +66,28 @@
 </body>
 
 <script>
-    document.getElementById('link-djlorek').addEventListener('click', function() {
-        window.open('https://linktr.ee/djlorek', '_blank');
-    });
+
+    const imgProfile = document.getElementById('link-djlorek');
+    if (imgProfile) {
+        imgProfile.onclick = function() {
+            window.open('https://linktr.ee/djlorek', '_blank');
+        };
+    }
+
+
+    document.getElementById('load-about').onclick = function() {
+        window.location.href = 'index.html';
+    };
+
+
+    document.getElementById('load-dj').onclick = function() {
+        window.location.href = 'homepage.lorek.dj.html';
+    };
+
+
+    document.getElementById('load-prod').onclick = function() {
+        window.location.href = 'homepage.lorek.production.html';
+    };
 </script>
 
 </html>
