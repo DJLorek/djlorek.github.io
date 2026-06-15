@@ -1,3 +1,18 @@
+@media (max-width: 768px) {
+    h4 {
+        font-size: 60px;
+    }
+
+    .main_div {
+        width: 95vw;
+    }
+
+    .info {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
 
 @font-face {
   font-family: Okafuera;
