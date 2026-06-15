@@ -1,323 +1,59 @@
-@media (max-width: 768px) {
-    h4 {
-        font-size: 60px;
-    }
-
-    .main_div {
-        width: 95vw;
-    }
-
-    .info {
-        font-size: 16px;
-        text-align: center;
-    }
-}
-
-
-@font-face {
-  font-family: Okafuera;
-  src: url(./fonts/Okaluera.otf)
-}
-
-@font-face {
-  font-family: Aventa;
-  src: url(./fonts/Aventa-LightPERSONALUSEONLY.otf)
-}
-
-
-body{
-    background-color: black;
-    
-}
-
-.main_div {
-  position: relative;
-  height: 97vh;
-  width: 90vw;
-  margin: 0 auto;
-  border-radius: 2vw;
-  background: rgba(27, 25, 25, 0.0014);
-
-  border: 1px solid rgba(255, 255, 255, 0.0014);
-  
-
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3), 
-              0 20px 50px rgba(0, 0, 0, 0.2);
-  
-  overflow: hidden;
-}
-
-
-.main_div::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-.nav_bar {
-    z-index: 10;
-    top: 0;
-    position: sticky;
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-    gap: 15px;
-    
-}
-
-
-
-
-
-
-.nav_bar .image{
-    object-fit: cover;
-    position: relative;
-    width: 60px;
-    height: auto;
-    clip-path: circle(50% at center);
-    transition: 0.6s ease;
-    
-}
-
-h1{
-
-    position:relative;
-    color:white;
-    font-size: xx-large;
-    transform: scale(1.4);
-
-}
-h2{
-  font-family: Okafuera;
-    position:relative;
-    color:white;
-    top:1vh
-
-}
-
-h3 {
-    color: white;
-    width: 100%;     
-    justify-content: flex-end;
-    padding-right: 20px;  
-    align-items: center;
-}
-
-.nav_bar .image:hover{
-
-    width: 5.23%;
-    height: auto;
-    transition: 0.6s ease;
-}
-
-
-
-.nav_bar .button {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    background-color: rgb(92, 0, 0);
-    border-radius: 3vh;
-    padding: 0 20px;
-    cursor: pointer;
-    transition: 0.3s ease-out;
-    text-decoration: none; 
-    color:white;
-    font-family: Aventa;
-    border: 3px rgb(92, 0, 0) solid;
-    height: 40px;
-}
-
-.nav_bar .button:hover{
-  background-color: rgb(31, 0, 0);
-  transform: scale(1.2);
-  transition: 0.3s ease-in-out;
-}
-
-
-.bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-
-  animation: rotate 100s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes smooth-flicker {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.2; }
-}
-
-.blob {
-  position: absolute;
-  object-fit: contain;
-  transition: 0.6s ease;
-  --distanza: calc(var(--w) * 0.5);
-  
-
-  animation: 
-    orbit 15s infinite linear, 
-    smooth-flicker 4s infinite ease-in-out; 
-}
-
-@keyframes orbit {
-  from { transform: rotate(0deg) translateX(var(--distanza)) rotate(0deg); }
-  to { transform: rotate(360deg) translateX(var(--distanza)) rotate(-360deg); }
-}
-
-
-.b1 { --w:100px; width:var(--w); top:15%; left:20%; animation-duration:12s,3.5s; animation-delay:-2s,-0.7s; }
-
-.b2 { --w:150px; width:var(--w); top:40%; left:60%; animation-duration:18s,5.2s; animation-delay:-8s,-3.1s; }
-
-.b3 { --w:80px; width:var(--w); top:70%; left:30%; animation-duration:14s,4.3s; animation-delay:-5s,-1.9s; }
-
-.b4 { --w:120px; width:var(--w); top:25%; left:75%; animation-duration:16s,6s; animation-delay:-11s,-2.5s; }
-
-.b5 { --w:90px; width:var(--w); top:55%; left:10%; animation-duration:20s,4.8s; animation-delay:-14s,-4.2s; }
-
-.bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("noise.png");
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-}
-
-
-.about_title {
-  position: absolute;
-  font-size: 4vh;
-  top: 0;
-  left: 2vw;
-  width: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  padding-top: 20px;
-  margin: 0;
-  color: white;
-  z-index: 100;
-  pointer-events: none;
-}
-
-h4{
-  display: flex;
-  font-family: Okafuera;
-  font-style: italic;
-  color: white;
-  justify-content: center;
-  font-size: 150px;
-}
-
-h5{
-  display: flex;
-  font-family: Aventa;
-  color: white;
-  justify-content: center;
- 
-}
-
-.Spotify{
-  position: absolute;
-  top: 10%;
-  left: 58%;
-  width: 35vw;
-  display: flex;
-  justify-content: right;
-  align-items: right;
-}
-
-.nav_2 {
-
-  width: 100%;
-  font-size: 30px;
-  font-family: Aventa;
-  color: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 6vw;
-  flex-shrink: 0; 
-}
-
-.nav_2 .bar{
-
-  font-family: Aventa;
-
-}
-
-
-
-
-.about_menu, .dj_menu, .prod_menu {
-    position: relative;
-    z-index: 1;
-}
-
-
-.about_menu::after, 
-.dj_menu::after, 
-.prod_menu::after {
-    content: "";
-    position: absolute;
-    top: -25%; left: -25%;
-    width: 150%; height: 150%;
-    z-index: -1;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 0.1s ease;
-    pointer-events: none;
-}
-
-
-.about_menu::after, 
-.dj_menu::after {
-    background-image: url('media/white_light.png');
-    background-size: contain;
-}
-
-
-.prod_menu::after {
-    background-image: url('media/white_light.png');
-    background-size: 100% 100%; 
-}
-
-
-.about_menu:hover::after, 
-.dj_menu:hover::after, 
-.prod_menu:hover::after {
-    opacity: 1;
-}
-
-.info{
-
-
-  display: flex;
-  font-size: 25px;
-  padding:30px;
-  padding-bottom: 5vh;
-
-
-}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>DJ Lorek Official Website</title>
+    <link rel="stylesheet" href="homepage.lorek.css?v=3" type="text/css">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="blob b1"> <img src="./media/light.png"></div>
+        <div class="blob b2"> <img src="./media/light.png"></div>
+        <div class="blob b3"> <img src="./media/light.png"></div>
+        <div class="blob b4"> <img src="./media/light.png"></div>
+        <div class="blob b5"> <img src="./media/light.png"></div>
+    </div>
+
+    <div class="nav_bar">
+        <img src="./media/djlorek.jpg" class="image">
+        <h1>|</h1><h2>DJ LOREK</h2>
+        
+        <a href="mailto:officialdjlorek@gmail.com?subject=Gig%20Inquiry" class="button">Book Now!</a>
+        
+    </div>
+
+    <div class="hero"> 
+        <h4>DJ LOREK</h4>
+    </div>
+
+    <div class="nav_2">
+
+        <h6 class="about_menu"> About&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp</h6> <h6 class="dj_menu">DJ&nbsp&nbsp</h6> <h6 class="bar"> |&nbsp&nbsp </h6> <h6 class="prod_menu"> Music Production</h6>
+        <!--          Oh yeah,  good old shitcoding-->          <!--   And again-->                           <!--   And again-->             <!--   And again-->
+
+    </div>
+
+    <div class="main_div">
+        <h5 class="about_title"> About</h5>
+        <div class="info">
+        <h5>&nbsp <br>
+
+
+
+            Hi, I'm DJ Lorek, an Italian DJ and electronic dance music producer<br>
+            set in the city of Rome since 2018.<br>
+            I started making music as an hobby and then transitioned to<br> 
+            using it to represent the world. <br>
+            I love experimenting with different synths and genres<br>
+            Whether it's Melodic EDM, Techno or House Music <br>
+            my goal its always been the same: <br>
+            &nbsp; <!--Drop a little hating on me lol, i know im a bad web coder-->
+            <br> <!--I never said i was good with html-->
+            Creating something meaningful and make people dance along with it. </h5>
+        </div>
+        
+        <iframe class="Spotify" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/41vOTUUkXoGMEcbLBKVEqq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+</body>
+</html>
