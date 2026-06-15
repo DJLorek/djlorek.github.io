@@ -190,20 +190,20 @@ h3 {
 }
 
 
-.music_production {
-    position: absolute;
-    font-size: 5vh;
-    top: 0;
-    left: 2vw;
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    padding-top: 20px;
-    margin: 0;
-    color: white;
-    z-index: 100;
-    pointer-events: none;
+.about_title {
+  position: absolute;
+  font-size: 4vh;
+  top: 0;
+  left: 2vw;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  padding-top: 20px;
+  margin: 0;
+  color: white;
+  z-index: 100;
+  pointer-events: none;
 }
 
 h4{
@@ -286,7 +286,6 @@ h5{
 
 .prod_menu::after {
     background-image: url('media/white_light.png');
-
     background-size: 100% 100%; 
 }
 
@@ -295,4 +294,15 @@ h5{
 .dj_menu:hover::after, 
 .prod_menu:hover::after {
     opacity: 1;
+}
+
+.info{
+
+
+  display: flex;
+  font-size: 25px;
+  padding:30px;
+  padding-bottom: 5vh;
+
+
 }
