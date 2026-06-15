@@ -105,6 +105,8 @@ h3 {
     transition: 0.6s ease;
 }
 
+
+
 .nav_bar .button {
     margin-left: auto;
     display: flex;
@@ -114,7 +116,11 @@ h3 {
     padding: 0 20px;
     cursor: pointer;
     transition: 0.3s ease-out;
-   
+    text-decoration: none; 
+    color:white;
+    font-family: Aventa;
+    border: 3px rgb(92, 0, 0) solid;
+    height: 40px;
 }
 
 .nav_bar .button:hover{
