@@ -277,8 +277,7 @@ h5{
 
 
 
-
-.about_menu, .dj_menu, .prod_menu {
+.about_menu, .dj_menu, .prod_menu, .privacy_menu{
     position: relative;
     z-index: 1;
 }
