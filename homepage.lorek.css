@@ -11,14 +11,6 @@
         font-size: 16px;
         text-align: center;
     }
-
-    .about_title {
-        position: relative;
-        left: 0;
-        top: 0;
-        padding-top: 20px;
-        padding-bottom: 10px;
-    }
 }
 
 
@@ -29,7 +21,7 @@
 
 @font-face {
   font-family: Aventa;
-  src: url(./fonts/Aventa.otf)
+  src: url(./fonts/Aventa-LightPERSONALUSEONLY.otf)
 }
 
 
@@ -277,6 +269,7 @@ h5{
 
 
 
+
 .about_menu, .dj_menu, .prod_menu, .privacy_menu{
     position: relative;
     z-index: 1;
@@ -285,7 +278,8 @@ h5{
 
 .about_menu::after, 
 .dj_menu::after, 
-.prod_menu::after {
+.prod_menu::after
+.privacy_menu {
     content: "";
     position: absolute;
     top: -25%; left: -25%;
@@ -300,7 +294,8 @@ h5{
 
 
 .about_menu::after, 
-.dj_menu::after {
+.dj_menu::after
+.privacy_menu::after {
     background-image: url('media/white_light.png');
     background-size: contain;
 }
@@ -314,7 +309,8 @@ h5{
 
 .about_menu:hover::after, 
 .dj_menu:hover::after, 
-.prod_menu:hover::after {
+.prod_menu:hover::after
+.privacy_menu::after {
     opacity: 1;
 }
 
