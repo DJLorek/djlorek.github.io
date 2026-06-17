@@ -270,47 +270,45 @@ h5{
 
 
 
-.about_menu, .dj_menu, .prod_menu, .privacy_menu{
+.about_menu, .dj_menu, .prod_menu, .privacy_menu {
     position: relative;
     z-index: 1;
 }
 
-
 .about_menu::after, 
 .dj_menu::after, 
-.prod_menu::after
-.privacy_menu {
+.prod_menu::after, 
+.privacy_menu::after {
     content: "";
     position: absolute;
-    top: -25%; left: -25%;
-    width: 150%; height: 150%;
+    top: -25%; 
+    left: -25%;
+    width: 150%; 
+    height: 150%;
     z-index: -1;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
     opacity: 0;
-    transition: opacity 0.1s ease;
+    transition: opacity 0.3s ease;
     pointer-events: none;
 }
 
-
 .about_menu::after, 
-.dj_menu::after
+.dj_menu::after, 
 .privacy_menu::after {
     background-image: url('media/white_light.png');
-    background-size: contain;
 }
-
 
 .prod_menu::after {
     background-image: url('media/white_light.png');
     background-size: 100% 100%; 
 }
 
-
 .about_menu:hover::after, 
 .dj_menu:hover::after, 
-.prod_menu:hover::after
-.privacy_menu::after {
+.prod_menu:hover::after, 
+.privacy_menu:hover::after {
     opacity: 1;
 }
 
