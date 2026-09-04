@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    
-    <link rel="icon" type="image/png" href="./media/djlorek.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ Lorek Official Website</title>
@@ -21,6 +19,7 @@
     </div>
 
     <header class="nav_bar">
+        
         <img src="./media/djlorek.jpg" class="image" id="link-djlorek" alt="DJ Lorek">
         <span class="bar-separator">|</span>
         <h2>DJ LOREK</h2>
@@ -74,7 +73,7 @@
         }
 
         document.getElementById('link-djlorek')?.addEventListener('click', () => {
-            window.open('linkspage.lorek.html', '_blank');
+            window.open('https://linktr.ee/djlorek', '_blank');
         });
 
         document.getElementById('load-about').addEventListener('click', () => navigateTo('index.html'));
