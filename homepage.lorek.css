@@ -22,6 +22,7 @@ body {
   min-height: 100vh;
 }
 
+/* Background con Blobs */
 .bg {
   position: fixed;
   inset: 0;
@@ -63,6 +64,7 @@ body {
 .b4 { --w:550px; width:var(--w); top:15%; left:60%; animation-duration:16s,6s; animation-delay:-11s,-2.5s; }
 .b5 { --w:480px; width:var(--w); top:45%; left:-5%; animation-duration:20s,4.8s; animation-delay:-14s,-4.2s; }
 
+/* Navbar Principale */
 .nav_bar {
   z-index: 100;
   top: 0;
@@ -75,6 +77,14 @@ body {
   backdrop-filter: blur(8px);
 }
 
+/* Registrazione variabile per rotazione dell'angolo */
+@property --a {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Logo con bordo Neon animato a rotella di caricamento */
 .nav_bar .image {
   width: 50px;
   height: 50px;
@@ -82,10 +92,29 @@ body {
   object-fit: cover;
   cursor: pointer;
   transition: transform 0.4s ease;
+  
+  /* Bordo trasparente e gradiente conica animato */
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(#000, #000) padding-box, 
+    conic-gradient(from var(--a, 0deg), #ff0000 0deg, #ff0000 90deg, transparent 270deg) border-box;
+  
+  filter: drop-shadow(0 0 6px #ff0000);
+  animation: spin-loader 1.5s linear infinite;
 }
 
 .nav_bar .image:hover {
   transform: scale(1.15);
+  filter: drop-shadow(0 0 12px #ff0000);
+}
+
+@keyframes spin-loader {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
 }
 
 .bar-separator {
@@ -124,6 +153,7 @@ h2 {
   box-shadow: 0 0 15px rgba(150, 0, 0, 0.4);
 }
 
+/* Hero Section */
 .hero {
   display: flex;
   justify-content: center;
@@ -138,6 +168,7 @@ h4 {
   text-align: center;
 }
 
+/* Menu Secondario */
 .nav_2 {
   width: 100%;
   font-size: clamp(20px, 3vw, 30px);
@@ -179,6 +210,7 @@ h4 {
   opacity: 1;
 }
 
+/* Content Div Glassmorphism */
 .main_div {
   position: relative;
   width: 90vw;
@@ -212,6 +244,7 @@ h4 {
   color: #fff;
 }
 
+/* Transizioni */
 .page-transition-overlay {
   position: fixed;
   inset: 0;
@@ -226,6 +259,7 @@ h4 {
   opacity: 0;
 }
 
+/* Responsiveness Mobile */
 @media (max-width: 768px) {
   .nav_bar {
     padding: 10px 12px;
