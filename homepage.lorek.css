@@ -228,12 +228,43 @@ h4 {
 
 @media (max-width: 768px) {
   .nav_bar {
-    padding: 10px 15px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .nav_bar .image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bar-separator {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .nav_bar .button {
+    padding: 0 12px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .nav_2 {
+    font-size: 0.9rem;
+    gap: 6px;
+    padding: 0 10px;
+  }
+
+  .menu-item {
+    padding: 2px 4px;
   }
 
   .main_div {
     width: 92vw;
-    padding: 25px;
+    padding: 25px 20px;
   }
 
   .info p {
