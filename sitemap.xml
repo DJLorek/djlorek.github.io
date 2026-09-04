@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Pagina Principale (index.html) -->
+  <url>
+    <loc>https://djlorek.github.io/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage DJ -->
+  <url>
+    <loc>https://djlorek.github.io/homepage.lorek.dj.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Homepage Production -->
+  <url>
+    <loc>https://djlorek.github.io/homepage.lorek.production.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pagina dei Link / Contatti -->
+  <url>
+    <loc>https://djlorek.github.io/linkspage.lorek.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy PDF -->
+  <url>
+    <loc>https://djlorek.github.io/PrivacyandPolicy.pdf</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
