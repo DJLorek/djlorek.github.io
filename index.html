@@ -9,6 +9,67 @@
     <title>DJ Lorek Official Website</title>
     <link rel="stylesheet" href="homepage.lorek.css">
 </head>
+
+<style> 
+    /*Gestisco inline solo l'embed perche' e' piu' pratico*/
+.popup {
+        position: fixed;
+        margin: 0;
+        bottom: 5px;
+        transform-origin: bottom left;
+        left: 5px;
+        z-index: 9999;
+        scale: 0.4;
+        display: flex;
+        align-items: flex-end;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    
+    .popup.hidden {
+        transform: scale(0.6) translateX(calc(-100% - 50px)); 
+    }
+
+    .popup iframe {
+        clip-path: inset(0 round 20px);
+    }
+
+   
+    .popup-toggle {
+        position: absolute;
+        right: -45px;
+        top: 50%;   
+        transform: translateY(-50%); 
+        background: #111;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 0 8px 8px 0;
+        width: 40px;
+        height: 60px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10000;
+        font-size: 18px;
+        transition: background 0.2s;
+    }
+
+    .popup-toggle:hover {
+        background: #333;
+    }
+
+    /* Ruota la freccia quando il popup è chiuso */
+    .popup.hidden .popup-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .popup-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+</style>
+
 <body>
 
     <div class="bg" aria-hidden="true">
@@ -53,8 +114,22 @@
         </div>
     </main>
 
-    <script>
 
+    <div class="popup" id="popupContainer">
+        <!-- embedding della playlist generale -->
+        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLfxhm-ytPlNc" frameborder="0" allowfullscreen></iframe>
+
+        <!-- Pulsante freccia posizionato sul bordo esterno -->
+        <button class="popup-toggle" id="togglePopupBtn" title="Nascondi/Mostra player">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+    </div>
+
+
+    <script>
+        
+        
+        
         window.addEventListener('DOMContentLoaded', () => {
     
         const url = window.location.href;
@@ -68,7 +143,16 @@
             showSectionByKey('links');
         }
         });
-        
+
+
+        const toggleBtn = document.getElementById('togglePopupBtn');
+        const popupContainer = document.getElementById('popupContainer');
+
+        toggleBtn.addEventListener('click', () => {
+            popupContainer.classList.toggle('hidden');
+        });
+
+
         const data = {
             "homepage": '<h5 class="about_title">About</h5><div class="info"><p>Hi, I\'m DJ Lorek, an Italian DJ and electronic dance music producer set in the city of Rome since 2018.<br><br>I started making music as a hobby and then transitioned to using it to represent the world.<br><br>I love experimenting with different synths and genres, whether it\'s Melodic EDM, Techno or House Music my goal has always been the same:<br><br><span class="highlight-text">Creating something meaningful and making people dance at it.</span></p></div>',
             "musicProduction": '<h5 class="about_title">Music Production</h5><div class="info"><p>Since 2017, I have been active as a music producer, starting from a fully self-taught and experimental approach of personal exploration of style.<br><br>My studies in Goody Music DJ School provided me not only the theoretical foundations of my DJing skills but also my production ones.<br><br>Over time, I released several unofficial remixes on YouTube that reached over 10,000 views. At the same time I worked with other producers from completely different genres, which helped me building even stronger versatility as an artist.<br><br><span class="highlight-text">Today my works are a big mix of all my musical experiences, shaping a personal and recognizable sound.</span></p></div>',
