@@ -1,1 +1,17 @@
-  <!--Workin on it -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+
+        <!-- All sections are loaded dinamically by loading them from an array -->
+        <loc>https://djlorek.github.io/</loc>
+        <lastmod>2026-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://djlorek.github.io/PrivacyandPolicy.pdf</loc>
+        <lastmod>2026-09-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>
