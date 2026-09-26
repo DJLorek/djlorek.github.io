@@ -303,3 +303,61 @@ h4 {
   .b4 { --w: 320px; }
   .b5 { --w: 290px; }
 }
+
+
+
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Aventa', sans-serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn i {
+            font-size: 1.3rem;
+        }
+
+        .link-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
+
+        .link-btn.primary-btn {
+            background: rgb(92, 0, 0);
+            border-color: rgb(150, 0, 0);
+            box-shadow: 0 0 15px rgba(150, 0, 0, 0.4);
+        }
+
+        .link-btn.primary-btn:hover {
+            background: rgb(130, 0, 0);
+            border-color: rgb(220, 0, 0);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+        }
+
+        .main_div_links {
+            max-width: 600px;
+            text-align: center;
+        }
