@@ -55,14 +55,19 @@
 
     <script>
 
+        window.addEventListener('DOMContentLoaded', () => {
+    
+        const url = window.location.href;
+        
         // Source - https://stackoverflow.com/a/26484115
         // Posted by Andy, modified by community. See post 'Timeline' for change history
         // Retrieved 2026-09-26, License - CC BY-SA 4.0
-            
+
         var arr = url.split('?');
         if (arr.length > 1 && arr[1] !== '') {
-          showSectionByKey('links');
+            showSectionByKey('links');
         }
+        });
         
         const data = {
             "homepage": '<h5 class="about_title">About</h5><div class="info"><p>Hi, I\'m DJ Lorek, an Italian DJ and electronic dance music producer set in the city of Rome since 2018.<br><br>I started making music as a hobby and then transitioned to using it to represent the world.<br><br>I love experimenting with different synths and genres, whether it\'s Melodic EDM, Techno or House Music my goal has always been the same:<br><br><span class="highlight-text">Creating something meaningful and making people dance at it.</span></p></div>',
