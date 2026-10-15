@@ -139,7 +139,7 @@
 
         const validSections = ['homepage', 'links', 'musicProduction', 'diskJockey'];
 
-        // 2. Dichiara la funzione che gestisce il cambio sezione con animazione
+        // Funzione che gestisce il cambio sezione con animazione
         function showSectionByKey(key) {
             if (!validSections.includes(key)) return;
 
@@ -160,18 +160,33 @@
                 mainContainer.innerHTML = '<div class="info"><p>Content not found</p></div>';
             }
         }
-        if (window.location.href.includes('?')) {
-            showSectionByKey('links');
-        }
-       
-        window.addEventListener('hashchange', () => {
-            const hashIndex = window.location.href.indexOf('#');
-            if (hashIndex !== -1) {
-                const sectionKey = window.location.href.substring(hashIndex + 1);
-                showSectionByKey(sectionKey);
-            }
-        });
 
+        // Funzione helper riutilizzabile per leggere il parametro "section" dall'URL ed eseguire la callback
+        function initQueryParamListener(onSectionChange, defaultSection = 'homepage') {
+            const getSectionFromUrl = () => {
+                const params = new URLSearchParams(window.location.search);
+                return params.get('section');
+            };
+
+            // Controlla al caricamento o al cambio della history (popstate)
+            const handleParamChange = () => {
+                const sectionKey = getSectionFromUrl();
+                if (sectionKey) {
+                    onSectionChange(sectionKey);
+                } else if (defaultSection) {
+                    onSectionChange(defaultSection);
+                }
+            };
+
+            // Esegui subito al caricamento della pagina
+            handleParamChange();
+
+            // Ascolta i cambiamenti di navigazione (es. pulsanti avanti/indietro del browser)
+            window.addEventListener('popstate', handleParamChange);
+        }
+
+        // Inizializzazione del listener basato sui parametri di query
+        initQueryParamListener(showSectionByKey, 'homepage');
 
         const toggleBtn = document.getElementById('togglePopupBtn');
         const popupContainer = document.getElementById('popupContainer');
@@ -180,12 +195,22 @@
             popupContainer.classList.toggle('hidden');
         });
 
-
-        document.getElementById('load-about').addEventListener('click', () => showSectionByKey('homepage'));
-        document.getElementById('load-dj').addEventListener('click', () => showSectionByKey('diskJockey'));
-        document.getElementById('load-prod').addEventListener('click', () => showSectionByKey('musicProduction'));
+        // Esempio: se vuoi aggiornare anche l'URL quando clicchi sui bottoni, puoi usare history.pushState
+        document.getElementById('load-about').addEventListener('click', () => {
+            history.pushState(null, '', '?section=homepage');
+            showSectionByKey('homepage');
+        });
+        document.getElementById('load-dj').addEventListener('click', () => {
+            history.pushState(null, '', '?section=diskJockey');
+            showSectionByKey('diskJockey');
+        });
+        document.getElementById('load-prod').addEventListener('click', () => {
+            history.pushState(null, '', '?section=musicProduction');
+            showSectionByKey('musicProduction');
+        });
 
         document.getElementById('link-djlorek')?.addEventListener('click', () => {
+            history.pushState(null, '', '?section=links');
             showSectionByKey('links');
         });
 
