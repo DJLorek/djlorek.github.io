@@ -117,7 +117,7 @@
 
     <div class="popup" id="popupContainer">
         <!-- embedding della playlist generale -->
-        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLfxhm-ytPlNc&autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLfxhm-ytPlNc" frameborder="0" allowfullscreen></iframe>
 
         <!-- Pulsante freccia posizionato sul bordo esterno -->
         <button class="popup-toggle" id="togglePopupBtn" title="Nascondi/Mostra player">
@@ -130,19 +130,25 @@
         
         
         
-        window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', () => {
     
         const url = window.location.href;
-        
-        // Source - https://stackoverflow.com/a/26484115
-        // Posted by Andy, modified by community. See post 'Timeline' for change history
-        // Retrieved 2026-09-26, License - CC BY-SA 4.0
 
-        var arr = url.split('?');
-        if (arr.length > 1 && arr[1] !== '') {
-            showSectionByKey('links');
+        // Cerca l'indice del carattere '#' nell'URL
+        const hashIndex = url.indexOf('#');
+
+        if (hashIndex !== -1) {
+        // Estrazione
+        const sectionKey = url.substring(hashIndex + 1);
+        
+        // Elenco delle sezioni 
+        const validSections = ['homepage', 'links', 'musicProduction', 'diskJockey'];
+        
+        // CheckRapido
+        if (validSections.includes(sectionKey)) {
+            showSectionByKey(sectionKey);
         }
-        });
+        }
 
 
         const toggleBtn = document.getElementById('togglePopupBtn');
@@ -192,6 +198,7 @@
         document.getElementById('load-privacy').addEventListener('click', () => {
             window.open('PrivacyandPolicy.pdf', '_blank');
         });
+    });
     </script>
 </body>
 </html>
