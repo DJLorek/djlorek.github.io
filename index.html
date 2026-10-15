@@ -160,7 +160,9 @@
                 mainContainer.innerHTML = '<div class="info"><p>Content not found</p></div>';
             }
         }
-
+        if (window.location.href.includes('?')) {
+            showSectionByKey('links');
+        }
        
         window.addEventListener('hashchange', () => {
             const hashIndex = window.location.href.indexOf('#');
