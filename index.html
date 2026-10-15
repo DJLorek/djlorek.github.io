@@ -129,7 +129,7 @@
     <script>
     window.addEventListener('DOMContentLoaded', () => {
         
-       
+        
         const data = {
             "homepage": '<h5 class="about_title">About</h5><div class="info"><p>Hi, I\'m DJ Lorek, an Italian DJ and electronic dance music producer set in the city of Rome since 2018.<br><br>I started making music as a hobby and then transitioned to using it to represent the world.<br><br>I love experimenting with different synths and genres, whether it\'s Melodic EDM, Techno or House Music my goal has always been the same:<br><br><span class="highlight-text">Creating something meaningful and making people dance at it.</span></p></div>',
             "musicProduction": '<h5 class="about_title">Music Production</h5><div class="info"><p>Since 2017, I have been active as a music producer, starting from a fully self-taught and experimental approach of personal exploration of style.<br><br>My studies in Goody Music DJ School provided me not only the theoretical foundations of my DJing skills but also my production ones.<br><br>Over time, I released several unofficial remixes on YouTube that reached over 10,000 views. At the same time I worked with other producers from completely different genres, which helped me building even stronger versatility as an artist.<br><br><span class="highlight-text">Today my works are a big mix of all my musical experiences, shaping a personal and recognizable sound.</span></p></div>',
@@ -137,8 +137,12 @@
             "links": '<h5 class="about_title">Official Links</h5><div class="links-list"><a href="mailto:officialdjlorek@gmail.com" class="link-btn primary-btn"><i class="fa-solid fa-envelope"></i><span>Contact Me</span></a><a href="https://open.spotify.com/intl-it/artist/41vOTUUkXoGMEcbLBKVEqq" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-spotify"></i><span>Spotify</span></a><a href="https://soundcloud.com/djlorek" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-soundcloud"></i><span>SoundCloud</span></a><a href="https://www.instagram.com/djlorek/" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a><a href="https://www.youtube.com/@DJLorek" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a><a href="https://www.tiktok.com/@officialdjlorek" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a></div>'
         };
 
-       
+        const validSections = ['homepage', 'links', 'musicProduction', 'diskJockey'];
+
+        // 2. Dichiara la funzione che gestisce il cambio sezione con animazione
         function showSectionByKey(key) {
+            if (!validSections.includes(key)) return;
+
             const mainContainer = document.querySelector('.main_div');
             if (data[key]) {
                 mainContainer.animate([
@@ -157,20 +161,16 @@
             }
         }
 
-        
-        const url = window.location.href;
-        const hashIndex = url.indexOf('#');
-
-        if (hashIndex !== -1) {
-            const sectionKey = url.substring(hashIndex + 1);
-            const validSections = ['homepage', 'links', 'musicProduction', 'diskJockey'];
-            
-            if (validSections.includes(sectionKey)) {
+       
+        window.addEventListener('hashchange', () => {
+            const hashIndex = window.location.href.indexOf('#');
+            if (hashIndex !== -1) {
+                const sectionKey = window.location.href.substring(hashIndex + 1);
                 showSectionByKey(sectionKey);
             }
-        }
+        });
 
-      
+
         const toggleBtn = document.getElementById('togglePopupBtn');
         const popupContainer = document.getElementById('popupContainer');
 
@@ -178,7 +178,7 @@
             popupContainer.classList.toggle('hidden');
         });
 
-       
+
         document.getElementById('load-about').addEventListener('click', () => showSectionByKey('homepage'));
         document.getElementById('load-dj').addEventListener('click', () => showSectionByKey('diskJockey'));
         document.getElementById('load-prod').addEventListener('click', () => showSectionByKey('musicProduction'));
