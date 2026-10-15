@@ -161,14 +161,14 @@
             }
         }
 
-        // Funzione helper riutilizzabile per leggere il parametro "section" dall'URL ed eseguire la callback
+
         function initQueryParamListener(onSectionChange, defaultSection = 'homepage') {
             const getSectionFromUrl = () => {
                 const params = new URLSearchParams(window.location.search);
                 return params.get('section');
             };
 
-            // Controlla al caricamento o al cambio della history (popstate)
+
             const handleParamChange = () => {
                 const sectionKey = getSectionFromUrl();
                 if (sectionKey) {
@@ -178,14 +178,14 @@
                 }
             };
 
-            // Esegui subito al caricamento della pagina
+
             handleParamChange();
 
-            // Ascolta i cambiamenti di navigazione (es. pulsanti avanti/indietro del browser)
+         
             window.addEventListener('popstate', handleParamChange);
         }
 
-        // Inizializzazione del listener basato sui parametri di query
+
         initQueryParamListener(showSectionByKey, 'homepage');
 
         const toggleBtn = document.getElementById('togglePopupBtn');
@@ -195,7 +195,7 @@
             popupContainer.classList.toggle('hidden');
         });
 
-        // Esempio: se vuoi aggiornare anche l'URL quando clicchi sui bottoni, puoi usare history.pushState
+       
         document.getElementById('load-about').addEventListener('click', () => {
             history.pushState(null, '', '?section=homepage');
             showSectionByKey('homepage');
